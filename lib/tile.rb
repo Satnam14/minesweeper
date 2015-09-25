@@ -23,8 +23,6 @@ class Tile
     return if revealed
     @revealed = true
     if neighbor_bomb_count.zero?
-      # return @value if @value > 0
-      # return @value if @value == -1
       self.neighbors.each do |neighbor|
         neighbor.reveal unless neighbor.revealed
       end
@@ -32,7 +30,6 @@ class Tile
   end
 
   def to_s
-    # if se.value == -1 && bomb == true
     if revealed
       if bombed
         "*".colorize(:red)

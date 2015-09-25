@@ -91,7 +91,7 @@ class Game
       puts "Please name your file."
       file_name = gets.chomp
       state = @board.to_yaml
-      File.open("minesweeper/#{file_name}.yml", "w") do |f|
+      File.open("saved_games/#{file_name}.yml", "w") do |f|
         f.puts(state)
       end
       puts "Do you want to quit? (y/n)"
